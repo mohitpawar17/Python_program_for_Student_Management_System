@@ -34,7 +34,25 @@ def mark_attendance(name, status):
             student['attendance'].append(status)
         print(f"Attendance marked for {name} as {status}")
 
+def user_login():
+    # Hardcoded login credentials for demonstration
+    expected_username = "admin"
+    expected_password = "password"
+
+    while True:
+        username = input("Username: ")
+        password = input("Password: ")
+
+        if username == expected_username and password == expected_password:
+            print("Login successful.")
+            return True
+        else:
+            print("Invalid credentials. Please try again.")
+
 def main():
+    if not user_login():
+        return
+
     while True:
         print("\n===== Student Management System =====")
         print("1. Add Student")
